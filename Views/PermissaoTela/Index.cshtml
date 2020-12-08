@@ -1,0 +1,64 @@
+﻿@model IEnumerable<adm_csharp.Models.PermissaoTela>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Novo">Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Formulario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Leitura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Incluir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alterar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Excluir)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Formulario.Form)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Leitura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Incluir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alterar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Excluir)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
