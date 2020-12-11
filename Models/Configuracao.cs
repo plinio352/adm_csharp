@@ -39,6 +39,7 @@ namespace adm_csharp.Models
         [StringLength(50), Required(ErrorMessage = "Campo obritatorio")]
         public string Cidade { get; set; }
 
+        [DisplayFormat(DataFormatString ="{0:##.###-###}", ApplyFormatInEditMode =false)]
         [StringLength(10), Required(ErrorMessage = "Campo obritatorio")]
         public string Cep { get; set; }
     }
